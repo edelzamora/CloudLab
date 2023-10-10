@@ -39,10 +39,10 @@ resource "aws_instance" "web_server" {
 
 output "server_public_ip" {
   value       = aws_instance.web_server.public_ip
-  description = "Ubuntu web server public IP address"
+  description = "web server public IP address"
 }
 
 output "server_private_ip" {
   value       = aws_instance.web_server.private_ip
-  description = "Ubuntu web server private IP address"
+  description = "web server private IP address"
 }
