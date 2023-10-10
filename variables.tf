@@ -33,10 +33,15 @@ variable "public_ip" {
 
 variable "main_instance_type" {
   type        = string
-  description = "The instance type for the ubuntu server instance"
+  description = "The instance type for the web server instance"
 }
 
 variable "main_vol_size" {
   type        = string
-  description = "The EBS volume size for the ubuntu server VM"
+  description = "The EBS volume size for the web server VM"
+}
+
+variable "allow_public_ip" {
+  type        = string
+  description = "If you the subnets to allow public IPs to be assigned to the instances"
 }

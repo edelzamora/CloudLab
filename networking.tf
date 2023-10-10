@@ -14,7 +14,8 @@ resource "aws_vpc" "cloudlab_vpc" {
 resource "aws_subnet" "sim_internet_subnet" {
   vpc_id                  = aws_vpc.cloudlab_vpc.id
   cidr_block              = var.sim_internet_cidr
-  map_public_ip_on_launch = true
+  map_public_ip_on_launch = var.allow_public_ip
+  availability_zone       = "${var.region}a"
 
   tags = {
     Name = "simulated_internet_subnet"
@@ -24,7 +25,8 @@ resource "aws_subnet" "sim_internet_subnet" {
 resource "aws_subnet" "dmz_subnet" {
   vpc_id                  = aws_vpc.cloudlab_vpc.id
   cidr_block              = var.dmz_cidr
-  map_public_ip_on_launch = true
+  map_public_ip_on_launch = var.allow_public_ip
+  availability_zone       = "${var.region}a"
 
   tags = {
     Name = "DMZ_subnet"
@@ -34,7 +36,8 @@ resource "aws_subnet" "dmz_subnet" {
 resource "aws_subnet" "on_prem_subnet" {
   vpc_id                  = aws_vpc.cloudlab_vpc.id
   cidr_block              = var.on_prem_cidr
-  map_public_ip_on_launch = true
+  map_public_ip_on_launch = var.allow_public_ip
+  availability_zone       = "${var.region}a"
 
   tags = {
     Name = "on_premises_subnet"
