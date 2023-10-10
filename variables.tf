@@ -31,3 +31,20 @@ variable "public_ip" {
   description = "Your public IP address from where you are connected to OR 0.0.0.0/32 (Not recommended, always internet wide access); home ip or on Google look up 'what is my ip' \n Add a /32 at the end; 1.2.3.4/32"
 }
 
+variable "key_pair" {
+  type = string
+  description = "The path to the key pair you created"
+}
+
+## VMs
+
+variable "server_instance_type" {
+  type = string
+  description = "The instance type for the ubuntu server instance"
+}
+
+variable "server_vol_size" {
+  type = string
+  description = "The EBS volume size for the ubuntu server VM"
+}
+
